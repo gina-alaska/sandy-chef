@@ -9,12 +9,15 @@
       "worker": {
         "queues": ["polar2grid", "default"]
       }
+    },
+    "polar2grid": {
+      "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_IMAPP_POLAR2GRID_V1.2.tar.gz"
     }
   },
   "chef_type": "role",
   "run_list": [
     "role[sandy-worker]",
-    "role[polar2grid]"
+    "polar2grid::default"
   ],
   "env_run_lists": {
   }

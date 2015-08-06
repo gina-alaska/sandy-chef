@@ -9,13 +9,22 @@
       "worker": {
         "queues": ["viirs_edr", "default"]
       }
+    },
+    "cspp": {
+      "viirs-edr": {
+        "components": {
+          "app": {"url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_VIIRS_EDR_V2.0.tar.gz"},
+          "static": { "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_VIIRS_EDR_V2.0_STATIC.tar.gz"},
+          "cache": {"url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_VIIRS_EDR_V2.0_CACHE.tar.gz"}
+        }
+      }
     }
   },
   "chef_type": "role",
   "run_list": [
     "role[sandy-worker]",
     "recipe[sandy-worker::viirs-edr]",
-    "role[cspp-viirs-edr]"
+    "cspp::viirs_edr"
   ],
   "env_run_lists": {
   }

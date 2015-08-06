@@ -9,13 +9,26 @@
       "worker": {
         "queues": ["cspp_sdr", "default"]
       }
+    },
+    "cspp": {
+      "snpp-sdr": {
+        "components": {
+          "app": {"url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.0.tar.gz"},
+          "static-terrain": { "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.0_STATIC.tar.gz"},
+          "cache": {"url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.0_CACHE.tar.gz"},
+          "cirs-hb-patch": {
+            "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.0.1_PATCH.tar.gz",
+            "action": "install"
+          }
+        }
+      }
     }
   },
   "chef_type": "role",
   "run_list": [
     "role[sandy-worker]",
     "recipe[sandy-worker::cspp]",
-    "role[cspp-snpp-sdr]"
+    "recipe[cspp::snpp_sdr]"
   ],
   "env_run_lists": {
   }

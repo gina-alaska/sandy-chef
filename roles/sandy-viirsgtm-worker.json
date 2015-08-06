@@ -9,12 +9,20 @@
       "worker": {
         "queues": ["gtm", "default"]
       }
+    },
+    "cspp": {
+      "imagery-edr": {
+        "components": {
+          "app": {"url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_IMAGERY_EDR_V2.0.tar.gz"},
+          "cache": {"url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_IMAGERY_EDR_V2.0_CACHE.tar.gz"}
+        }
+      }
     }
   },
   "chef_type": "role",
   "run_list": [
     "role[sandy-worker]",
-    "role[cspp-viirs-gtm]"
+    "cspp::imagery_edr"
   ],
   "env_run_lists": {
   }

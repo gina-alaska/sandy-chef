@@ -1,8 +1,15 @@
 {
-  "name": "cspp-uw-hyperspectral",
-  "description": "CSPP Hyperspectral Algorithms",
+  "name": "sandy-uw_hyperspectral-worker",
+  "description": "Sandy CSPP UW-Hyperspectral Worker",
   "json_class": "Chef::Role",
   "default_attributes": {
+  },
+  "override_attributes": {
+    "sandy": {
+      "worker": {
+        "queues": ["uw-hyperspectral", "default"]
+      }
+    },
     "cspp": {
       "uw-hyperspectral": {
         "components": {
@@ -12,7 +19,11 @@
       }
     }
   },
+  "chef_type": "role",
   "run_list": [
+    "role[sandy-worker]",
     "cspp::uw_hyperspectral"
-  ]
+  ],
+  "env_run_lists": {
+  }
 }
