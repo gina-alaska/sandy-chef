@@ -9,12 +9,15 @@
       "worker": {
         "queues": ["rtstps", "default"]
       }
+    },
+    "rtstps": {
+      "source": "http://mirrors.gina.alaska.edu/NASA/RT-STPS_5.6.tar.gz"
     }
   },
   "chef_type": "role",
   "run_list": [
     "role[sandy-worker]",
-    "role[rtstps]"
+    "rtstps::default"
   ],
   "env_run_lists": {
   }
