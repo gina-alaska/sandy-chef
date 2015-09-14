@@ -5,6 +5,7 @@
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
 include_recipe 'lvm'
+include_recipe 'git'
 
 lvm_logical_volume 'lv_home' do
   group 'system'
@@ -19,8 +20,24 @@ package 'gina-ruby-21'
 
 include_recipe 'chruby'
 
-user 'processing'
+account = data_bag_item('users', 'processing')
 
+group 'processing' do
+  gid account['gid'] || account['uid']
+end
+
+user_account 'processing' do
+  uid account['uid'] if account['uid']
+  gid 'processing'
+  home '/home/processing'
+  comment 'Sandy Processing'
+  ssh_keys account['ssh_keys']
+  ssh_keygen false
+end
+
+file ::File.join('/home/processing', '.gemrc') do
+  content 'gem: --no-ri --no-rdoc --bindir /usr/bin'
+end
 directory '/home/processing/conveyor' do
   owner 'processing'
   group 'processing'
@@ -77,7 +94,7 @@ end
 
 mount node['sandy']['shared_path'] do
   fstype 'glusterfs'
-  device 'pod6.gina.alaska.edu:/gvolSatCache'
+  device node['sandy']['storage']['cache']['device']
   action [:mount, :enable]
 end
 
@@ -85,7 +102,7 @@ gem_package "bundler" do
   gem_binary ::File.join('/opt/rubies', "ruby-#{node['sandy']['ruby']['version']}", 'bin/gem')
 end
 
-sandy_controller = search(:node, 'roles:sandy-controller').first
+sandy_controller = search(:node, 'roles:sandy-app').first
 sandy_controller = node if sandy_controller.nil?
 
 include_recipe 'runit'
@@ -97,7 +114,7 @@ runit_service 'conveyor' do
     "SVWAIT" => "15",
     "LANDFALL_RAW_PATH" => node['sandy']['raw_path'],
     "LANDFALL_SHARED_PATH" => node['sandy']['shared_path'],
-    "SANDY_CONTROLLER" => sandy_controller['fqdn']
+    "SANDY_CONTROLLER" => sandy_controller['ipaddress']
     })
   options({
     user: 'processing',
