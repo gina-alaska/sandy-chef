@@ -1,34 +1,60 @@
 DEPENDENCIES
+  aapp
+    git: git://github.com/gina-alaska/aapp-cookbook.git
+    revision: fa5e7489a8d115489f63d75b5e7a9f66c9a3b5b2
+  bash-cve-2014-7169
+    git: git://github.com/gina-alaska/bash-cve-2014-7169-cookbook.git
+    revision: f42e705e00c2a5912695217ceea280384faee8d5
   chef-client
   chef-server
   chruby
   cspp
     git: git://github.com/gina-alaska/cspp-cookbook.git
-    revision: da316e73927b378ced1abf1338c941c12fb3398d
+    revision: 90e6de539f89ed887dfb492afa09156d99d3af4d
   gina-gluster
     git: git@github.com:gina-alaska/gina-gluster-cookbook
     revision: d898f1328501dcf5670588dc9baf5e849182cd33
+  gina-modis
+    git: git@github.alaska.edu:gina-cookbooks/gina-modis
+    revision: ff17d12c6afeab1180f93bddac97ec87ce658908
+  gina-users
+    git: git@github.alaska.edu:gina-cookbooks/gina-users.git
+    revision: 5da2d9c33e7c305ee451281321dfcf6e334c4773
   iptables-ng
+  ldm
+    git: git://github.com/gina-alaska/ldm-cookbook.git
+    revision: f1e1ed6cb517f95245dcd1061ce45a04da2abf66
   logrotate (~> 1.6.0)
   ntp
   openssh
   polar2grid
     git: git://github.com/gina-alaska/polar2grid-cookbook.git
-    revision: 4bc9f0b67c04eeeddc4a34335328a17f96896176
+    revision: fafe23627d2b502a307d62bab0fa518151439171
   postgresql
   redisio
   resolver
   rtstps
     git: git://github.com/gina-alaska/rtstps-cookbook.git
-    revision: 87de4cca5e01405b7b515a7246bcc015b2b3d0e3
+    revision: bd72f01a97bf00edb478e68446578f49653c4042
   sandy
-    path: cookbooks/sandy-rails
-  sandy-chef-server
-    path: cookbooks/sandy-chef-server
+    git: git://github.com/gina-alaska/sandy-rails-cookbook.git
+    revision: 053eedee13218ad4aa68a65c7b12bf0b78ebdc7f
+  sandy-base
+    git: git://github.com/gina-alaska/sandy-base-cookbook.git
+    revision: 1abf5dda59935933eb8d4e632905a8c4602a7635
+  sandy-compute
+    git: git://github.com/gina-alaska/sandy-compute-cookbook.git
+    revision: 003ebbfda3782ae45ebc2d84ad85a427715d6e8d
   sandy-dhcp
-    path: cookbooks/sandy-dhcp
-  sandy-sudoers
-    path: cookbooks/sandy-sudoers
+    git: git://github.com/gina-alaska/sandy-dhcp-cookbook.git
+    revision: be7bf2da3a796a8e71af8c48a3c5136f13c71d11
+  sandy-landfall
+    path: cookbooks/sandy-landfall
+  sandy-ldm
+    path: cookbooks/sandy-ldm
+  sandy-storage
+    git: git://github.com/gina-alaska/sandy-storage-cookbook.git
+    revision: 55d1312967416c3e54af53780bbb448debcfa373
   yum-gina
     git: git@github.com:gina-alaska/yum-gina-cookbook
     revision: 0b944c07c4416c0be5e60c2afbe384f34ee48e2e
@@ -36,117 +62,193 @@ DEPENDENCIES
 GRAPH
   7-zip (1.0.2)
     windows (>= 1.2.2)
-  apt (2.6.0)
+  aapp (0.2.0)
+    line (>= 0.0.0)
+    yum-gina (>= 0.0.0)
+  apt (2.8.2)
+  apt-chef (0.2.0)
+    apt (>= 0.0.0)
   ark (0.9.0)
     7-zip (>= 0.0.0)
     windows (>= 0.0.0)
-  aws (2.5.0)
-  bluepill (2.3.1)
+  bash-cve-2014-7169 (0.4.1)
+    ohai (>= 0.0.0)
+    yum (>= 0.0.0)
+  bluepill (2.4.0)
     rsyslog (>= 0.0.0)
-  build-essential (2.1.2)
-  chef-client (3.9.0)
+  build-essential (2.2.3)
+  chef-client (4.3.1)
     cron (>= 1.2.0)
     logrotate (>= 1.2.0)
-    windows (~> 1.11)
-  chef-server (2.1.6)
-  chef-server-populator (0.3.2)
-    chef-server (>= 2.1.0)
-  chef-sugar (2.4.1)
-  chef_handler (1.1.6)
+    windows (~> 1.37)
+  chef-ingredient (0.11.3)
+    apt-chef (>= 0.0.0)
+    yum-chef (>= 0.0.0)
+  chef-server (4.1.0)
+    chef-ingredient (>= 0.11.0)
+  chef-sugar (3.1.1)
+  chef-vault (1.3.0)
+  chef_handler (1.2.0)
   chruby (0.2.2)
     ark (>= 0.0.0)
     ruby_build (>= 0.0.0)
+  chruby_install (0.1.1)
+    build-essential (>= 0.0.0)
   cron (1.6.1)
-  cspp (2.0.0)
+  cspp (2.2.0)
     tar (>= 0.0.0)
-  database (2.3.0)
-    aws (>= 0.0.0)
-    mysql (>= 5.0.0)
-    mysql-chef_gem (>= 0.0.0)
+  database (4.0.9)
     postgresql (>= 1.0.0)
-    xfs (>= 0.0.0)
-  dhcp (2.2.2)
+  dhcp (5.1.0)
     helpers-databags (>= 0.0.0)
     ruby-helper (>= 0.0.0)
+  dmg (2.2.2)
   gina-gluster (1.0.2)
     apt (>= 0.0.0)
     logrotate (~> 1.6.0)
     ohai (>= 0.0.0)
     yum (~> 3.0)
-  helpers-databags (1.0.0)
-  iptables (0.14.0)
-  iptables-ng (2.2.2)
-  java (1.28.0)
-  logrotate (1.6.0)
-  mysql (5.6.1)
-    yum-mysql-community (>= 0.0.0)
-  mysql-chef_gem (0.0.5)
+  gina-modis (0.2.1)
+    git (>= 0.0.0)
+    tar (>= 0.0.0)
+  gina-users (0.1.0)
+    chef-sugar (~> 3.1.0)
+    sudo (~> 2.7.1)
+    user (~> 0.4.2)
+    users (~> 1.8.2)
+  git (4.3.4)
     build-essential (>= 0.0.0)
-    mysql (>= 0.0.0)
-  nginx (2.7.4)
+    dmg (>= 0.0.0)
+    windows (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  helpers-databags (1.0.0)
+  iptables (1.0.0)
+  iptables-ng (2.2.8)
+  java (1.35.0)
+  ldm (0.4.0)
+    build-essential (>= 0.0.0)
+    user (>= 0.0.0)
+  line (0.6.2)
+  logrotate (1.6.0)
+  lvm (1.3.7)
+  nginx (2.7.6)
     apt (~> 2.2)
     bluepill (~> 2.3)
     build-essential (~> 2.0)
     ohai (~> 2.0)
     runit (~> 1.2)
     yum-epel (~> 0.3)
-  ntp (1.6.5)
+  ntp (1.8.6)
   ohai (2.0.1)
-  openssh (1.3.4)
+  omnibus_updater (1.0.4)
+  openssh (1.5.2)
     iptables (>= 0.0.0)
-  openssl (2.0.0)
+  openssl (4.0.0)
     chef-sugar (>= 0.0.0)
-  polar2grid (0.3.0)
+  packagecloud (0.1.0)
+  parted (2.1.2)
+  partial_search (1.0.8)
+  polar2grid (0.3.1)
     ark (>= 0.0.0)
-  postgresql (3.4.12)
+  postgresql (3.4.20)
     apt (>= 1.9.0)
     build-essential (>= 0.0.0)
-    openssl (>= 0.0.0)
-  redisio (2.2.4)
+    openssl (~> 4.0.0)
+  redisio (2.3.0)
     build-essential (>= 0.0.0)
     ulimit (>= 0.1.2)
-  resolver (1.2.0)
-  rsyslog (1.12.2)
-  rtstps (2.0.0)
+  resolver (1.3.0)
+  rsyslog (2.1.0)
+  rtstps (2.1.0)
     java (>= 0.0.0)
+  rubies (0.1.0)
+    build-essential (>= 0.0.0)
+    chruby_install (>= 0.0.0)
+    ruby_install (>= 0.0.0)
   ruby-helper (0.0.1)
   ruby_build (0.8.0)
-  runit (1.5.10)
+  ruby_install (1.0.5)
+    apt (>= 0.0.0)
+    ark (>= 0.0.0)
+    yum (>= 0.0.0)
+  runit (1.5.14)
     build-essential (>= 0.0.0)
     yum (~> 3.0)
     yum-epel (>= 0.0.0)
-  sandy (0.1.1)
+  sandy (0.7.0)
+    build-essential (>= 0.0.0)
+    chef-vault (>= 0.0.0)
     chruby (>= 0.0.0)
     database (>= 0.0.0)
+    gina-gluster (>= 0.0.0)
+    git (>= 0.0.0)
+    lvm (>= 0.0.0)
     nginx (>= 0.0.0)
+    packagecloud (>= 0.0.0)
+    parted (>= 0.0.0)
     postgresql (>= 0.0.0)
     redisio (>= 0.0.0)
     runit (>= 0.0.0)
     unicorn (>= 0.0.0)
+    user (>= 0.0.0)
+    xfs (>= 0.0.0)
     yum-epel (>= 0.0.0)
     yum-gina (>= 0.0.0)
-  sandy-chef-server (0.1.0)
+  sandy-base (0.4.0)
+    bash-cve-2014-7169 (>= 0.0.0)
     chef-client (>= 0.0.0)
-    chef-server (>= 0.0.0)
-    chef-server-populator (>= 0.0.0)
-    chef-sugar (>= 0.0.0)
+    chef-sugar (~> 3.1.0)
+    gina-users (>= 0.0.0)
+    iptables-ng (>= 0.0.0)
+    ntp (~> 1.8.0)
+    omnibus_updater (~> 1.0.0)
+    openssh (>= 0.0.0)
+    resolver (~> 1.3.0)
+    selinux (~> 0.9.0)
+    ssh_known_hosts (>= 0.0.0)
+    users (>= 0.0.0)
+  sandy-compute (0.3.0)
+    gina-gluster (>= 0.0.0)
+    lvm (>= 0.0.0)
+    xfs (>= 0.0.0)
   sandy-dhcp (0.1.0)
     dhcp (>= 0.0.0)
-  sandy-sudoers (0.1.4)
-    sudo (>= 0.0.0)
-    user (>= 0.0.0)
-  sudo (2.7.1)
-  tar (0.5.0)
-  ulimit (0.3.2)
-  unicorn (2.0.0)
-  user (0.3.0)
-  windows (1.34.8)
+  sandy-landfall (0.7.0)
+    build-essential (>= 0.0.0)
+    chruby (>= 0.0.0)
+    gina-gluster (>= 0.0.0)
+    git (>= 0.0.0)
+    lvm (>= 0.0.0)
+    runit (= 1.5.14)
+    users (>= 0.0.0)
+    yum-gina (>= 0.0.0)
+  sandy-ldm (0.3.0)
+    ldm (>= 0.0.0)
+    nginx (>= 0.0.0)
+    rubies (>= 0.0.0)
+    runit (>= 0.0.0)
+  sandy-storage (0.4.1)
+    gina-gluster (>= 0.0.0)
+    lvm (>= 0.0.0)
+    xfs (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  selinux (0.9.0)
+  ssh_known_hosts (2.0.0)
+    partial_search (>= 0.0.0)
+  sudo (2.7.2)
+  tar (0.7.0)
+  ulimit (0.3.3)
+  unicorn (2.1.0)
+    build-essential (>= 0.0.0)
+  user (0.4.2)
+  users (1.8.2)
+  windows (1.38.2)
     chef_handler (>= 0.0.0)
   xfs (1.1.0)
-  yum (3.4.1)
-  yum-epel (0.5.2)
-    yum (~> 3.0)
+  yum (3.7.1)
+  yum-chef (0.2.0)
+    yum (~> 3.2)
+  yum-epel (0.6.3)
+    yum (~> 3.2)
   yum-gina (0.1.0)
     yum (~> 3.0)
-  yum-mysql-community (0.1.10)
-    yum (>= 3.0)
