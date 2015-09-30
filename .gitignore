@@ -19,4 +19,7 @@ bin/*
 cspp
 
 data_bags/sandy/*
+data_bags/apps/sandy-production.json
+data_bags/apps/sandy-staging.json
+data_bags/apps/sandy-test.json
 !data_bags/sandy/.gitkeep
