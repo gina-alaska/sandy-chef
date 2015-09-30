@@ -1,0 +1,24 @@
+{
+  "id": "sandy-test",
+  "repository": "https://github.com/gina-alaska/sandy-rails",
+  "revision": "1.0.0",
+  "passwords": {
+    "postgres": "",
+    "sandy": "",
+    "influxdb": ""
+  },
+  "env": {
+    "secret_key_base": "",
+    "rails_env": "production",
+    "rails_database": "",
+    "rails_database_username": "",
+    "influxdb_database": "",
+    "influxdb_username": "",
+    "redis_namespace": "",
+    "port": "",
+    "orbnav_api_url": "http://peate.ssec.wisc.edu/orbnav/api/v1",
+    "dbrtn_apikey": "",
+    "dbrtn_apisecret": ""
+  },
+  "search_query": "chef_environment:test"
+}
