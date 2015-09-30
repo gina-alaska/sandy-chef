@@ -6,5 +6,7 @@ cookbook 'lvm'
 cookbook 'gina-gluster', git: 'git@github.com:gina-alaska/gina-gluster-cookbook'
 cookbook 'runit', '= 1.5.14'
 cookbook 'build-essential'
+cookbook 'users'
+cookbook 'git'
 
 metadata

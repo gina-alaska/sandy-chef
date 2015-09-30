@@ -1,9 +1,10 @@
 source "https://supermarket.chef.io"
 
-cookbook 'sandy', path: '../sandy-rails'
+cookbook 'sandy', git: 'git@github.com:gina-alaska/sandy-rails-cookbook'
 cookbook 'lvm'
 cookbook 'xfs'
 cookbook 'parted'
 cookbook 'yum-gina', git: 'git@github.com:gina-alaska/yum-gina-cookbook'
+cookbook 'gina-gluster', git: 'git@github.com:gina-alaska/gina-gluster-cookbook'
 metadata
 
