@@ -7,9 +7,93 @@
   "json_class": "Chef::Environment",
   "chef_type": "environment",
   "default_attributes": {
+    "cspp": {
+      "snpp-sdr": {
+        "version": "SDR_2_1",
+        "components": {
+          "app": {
+            "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.1.tar.gz",
+            "checksum": "140147bc21633f8f33c8212c51023118b694f16b104d7684acaaf52a9a27592e",
+            "creates": "SDR_2_1/viirs/viirs_sdr.sh"
+          },
+          "static-terrain": {
+            "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.1_STATIC.tar.gz",
+            "checksum": "935607612d81f94287b94235a1d380b8a7213117044fd0e97de26373e4c056bc",
+            "creates": "SDR_2_1/anc/static/ADL/data/tiles/Terrain-Eco-ANC-Tile"
+          },
+          "cache": {
+            "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.1_CACHE.tar.gz",
+            "checksum": "4c560e465cdcb66d7e2bd96de15f633dfdf7f34931d883dc50511187e338dc0c",
+            "creates": "SDR_2_1/anc/cache/luts"
+          }
+        }
+      }
+    },
+    "iptables-ng": {
+      "rules": {
+        "filter": {
+          "INPUT": {
+            "22-ssh-internal": {
+              "rule": "-m state --state NEW -p tcp -s 10.50.0.0/16 --dport 22 -j ACCEPT",
+              "ip_version": 4
+            },
+            "5432-postgres": {
+              "rule": "-m state --state NEW -p tcp -s 10.50.0.0/16 --dport 5432 -j ACCEPT",
+              "ip_version": 4
+            }
+          }
+        }
+      }
+    },
+    "ldm": {
+      "source": "ftp://ftp.unidata.ucar.edu/pub/ldm/ldm-6.12.14.tar.gz",
+      "checksum": "41205ee7b75ddc552d243bc2dbb39f79c076ce87bf75a7d42f90dff96ecea84d"
+    },
+    "sandy": {
+      "account": "processing",
+      "shared_dir": "/gluster/cache/",
+      "scratch_dir": "/mnt/scratch/workdir",
+      "data_bag": "sandy-production",
+      "worker": {
+        "data_bag": "sandy-utils-production",
+        "concurrency": 1,
+        "revision": "1.0.1"
+      },
+      "storage": {
+        "cache": {
+          "device": "glc-s-03:/gvolSatCache",
+          "actions": ["mount", "enable"]
+        },
+        "volumes": {
+          "gvolSatCache": {
+            "size": "10T",
+            "filesystem": "xfs",
+            "filesystem_params": "-i size=512",
+            "mount": {
+              "location": "/gluster/gvolSatCache",
+              "options": "noatime,nodiratime"
+            }
+          }
+        }
+      }
+    }
 
   },
   "override_attributes": {
-
+    "glusterfs": {
+      "yum": {
+        "baseurl": "http://download.gluster.org/pub/gluster/glusterfs/3.7/LATEST/EPEL.repo/epel-$releasever/$basearch/"
+      },
+      "client": {
+        "version": null
+      }
+    },
+    "ldm": {
+      "allows": [{
+        "feedset": "EXP",
+        "hostname": "sandy-ldm-prod.production.sandy"
+      }],
+      "global_queue": true
+    }
   }
 }

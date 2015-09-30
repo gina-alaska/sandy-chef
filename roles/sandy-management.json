@@ -3,6 +3,12 @@
   "description": "Sandy Management Node",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "dhcp": {
+      "interfaces": ["eth2.203"],
+      "networks": [
+        "10-50-0-0_16"
+      ]
+    }
   },
   "override_attributes": {
     "iptables-ng": {
@@ -20,8 +26,8 @@
   },
   "chef_type": "role",
   "run_list": [
-    "role[sandy-base]",
-    "recipe[chef-server]"
+    "sandy-pxe",
+    "sandy-dhcp"
   ],
   "env_run_lists": {
   }

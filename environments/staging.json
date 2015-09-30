@@ -1,15 +1,58 @@
 {
   "name": "staging",
-  "description": "Staging Environment for Sandy",
+  "description": "Staging Environment for Sandy - UAF-PROD",
   "cookbook_versions": {
 
   },
   "json_class": "Chef::Environment",
   "chef_type": "environment",
   "default_attributes": {
-
+    "ldm": {
+      "source": "ftp://ftp.unidata.ucar.edu/pub/ldm/ldm-6.12.14.tar.gz",
+      "checksum": "41205ee7b75ddc552d243bc2dbb39f79c076ce87bf75a7d42f90dff96ecea84d"
+    },
+    "sandy": {
+      "data_bag": "sandy-production",
+      "storage": {
+        "cache": {
+          "device": "uaf-s-01:/gvolSatCache",
+          "actions": ["mount", "enable"]
+        },
+        "volumes": {
+          "gvolSatCache": {
+            "size": "10T",
+            "filesystem": "xfs",
+            "filesystem_params": "-i size=512",
+            "mount": {
+              "location": "/gluster/gvolSatCache",
+              "options": "noatime,nodiratime"
+            }
+          },
+          "gvolSatCacheTest": {
+            "size": "1T",
+            "filesystem": "xfs",
+            "filesystem_params": "-i size=512",
+            "mount": {
+              "location": "/gluster/gvolSatCacheTest",
+              "options": "noatime,nodiratime"
+            }
+          }
+        }
+      },
+      "worker": {
+        "data_bag": "sandy-utils-production",
+        "revision": "1.0.1"
+      }
+    }
   },
   "override_attributes": {
-
+    "glusterfs": {
+      "yum": {
+        "baseurl": "http://download.gluster.org/pub/gluster/glusterfs/3.7/LATEST/EPEL.repo/epel-$releasever/$basearch/"
+      },
+      "client": {
+        "version": null
+      }
+    }
   }
 }

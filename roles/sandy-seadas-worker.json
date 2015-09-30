@@ -1,21 +1,20 @@
 {
-  "name": "sandy-csppsdr-worker",
-  "description": "Sandy CSPP SDR Worker",
+  "name": "sandy-seadas-worker",
+  "description": "Sandy SEADAS Worker",
   "json_class": "Chef::Role",
   "default_attributes": {
   },
   "override_attributes": {
     "sandy": {
       "worker": {
-        "queues": ["cspp_sdr", "default"]
+        "queues": ["seadas", "default"]
       }
     }
   },
   "chef_type": "role",
   "run_list": [
-    "role[sandy-worker]",
-    "recipe[sandy-worker::cspp]",
-    "recipe[cspp::snpp_sdr]"
+    "recipe[gina-modis::default]",
+    "role[sandy-worker]"
   ],
   "env_run_lists": {
   }

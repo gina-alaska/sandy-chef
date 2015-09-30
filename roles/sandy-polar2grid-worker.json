@@ -16,8 +16,8 @@
   },
   "chef_type": "role",
   "run_list": [
-    "role[sandy-worker]",
-    "polar2grid::default"
+    "polar2grid::default",
+    "role[sandy-worker]"
   ],
   "env_run_lists": {
   }

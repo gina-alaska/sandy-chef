@@ -9,6 +9,18 @@
       "rules": {
         "filter": {
           "INPUT": {
+            "111-sunrpc-tcp": {
+              "rule": "-m state --state NEW -p tcp --dport 111 -j ACCEPT",
+              "ip_version": 4
+            },
+            "111-sunrpc-udp": {
+              "rule": "-m state --state NEW -p udp --dport 111 -j ACCEPT",
+              "ip_version": 4
+            },
+            "2049-portmapper": {
+              "rule": "-m state --state NEW -p tcp --dport 2049 -j ACCEPT",
+              "ip_version": 4
+            },
             "24007-glusterd": {
               "rule": "-m state --state NEW -p tcp --dport 24007 -j ACCEPT",
               "ip_version": 4
@@ -29,8 +41,7 @@
   "chef_type": "role",
   "run_list": [
     "role[sandy-base]",
-    "role[sandy-storage]",
-    "gina-gluster::server"
+    "recipe[sandy-storage::default]"
   ],
   "env_run_lists": {
   }

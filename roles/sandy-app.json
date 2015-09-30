@@ -1,8 +1,20 @@
 {
-  "name": "sandy-landfall",
-  "description": "Sandy entry point for data",
+  "name": "sandy-app",
+  "description": "Sandy Dashboard",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "iptables-ng": {
+      "rules": {
+        "filter": {
+          "INPUT": {
+            "80-http": {
+              "rule": "-m state --state NEW -p tcp --dport 80 -j ACCEPT",
+              "ip_version": 4
+            }
+          }
+        }
+      }
+    }
   },
   "override_attributes": {
     "chruby": {
@@ -19,8 +31,9 @@
   "chef_type": "role",
   "run_list": [
     "role[sandy-base]",
-    "sandy-landfall::default"
+    "recipe[sandy::web]"
   ],
   "env_run_lists": {
+
   }
 }

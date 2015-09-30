@@ -1,11 +1,20 @@
 {
-  "name": "sandy-ldm",
+  "name": "sandy-ldm-glc",
   "description": "Sandy LDM Server",
   "json_class": "Chef::Role",
   "default_attributes": {
-
+    "sandy-ldm": {
+      "data_bag": "sandy-ldm-glc"
+    }
   },
   "override_attributes": {
+    "ldm": {
+      "source": "ftp://ftp.unidata.ucar.edu/pub/ldm/ldm-6.12.14.tar.gz",
+      "checksum": "41205ee7b75ddc552d243bc2dbb39f79c076ce87bf75a7d42f90dff96ecea84d",
+      "allows": {
+        
+      }
+    },
     "iptables-ng": {
       "rules": {
         "filter": {

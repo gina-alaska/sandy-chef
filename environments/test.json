@@ -1,0 +1,38 @@
+{
+  "name": "test",
+  "description": "Test Environment for Sandy - UAF-TEST",
+  "cookbook_versions": {
+
+  },
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+    "sandy": {
+      "data_bag": "sandy-test",
+      "storage": {
+        "cache": {
+          "device": "uaf-s-01:/gvolSatCacheTest",
+          "actions": ["mount", "enable"]
+        },
+        "volumes": {
+          "gvolSatCacheTest": {
+            "size": "2T",
+            "filesystem": "xfs",
+            "filesystem_params": "-i size=512",
+            "mount": {
+              "location": "/gluster/gvolSatCacheTest",
+              "options": "noatime,nodiratime"
+            }
+          }
+        }
+      },
+      "worker": {
+        "data_bag": "sandy-utils-test",
+        "revision": "1.0.1"
+      }
+    }
+  },
+  "override_attributes": {
+
+  }
+}
