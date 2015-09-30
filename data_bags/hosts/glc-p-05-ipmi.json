@@ -1,0 +1,7 @@
+{
+  "id": "glc-p-05-ipmi",
+  "hostname": "glc-p-05-ipmi",
+  "aliases": ["glc-p-05-ipmi.sandy"],
+  "comment": "Gilmore Compute Node 05 IPMI",
+  "ip": "10.55.0.105"
+}

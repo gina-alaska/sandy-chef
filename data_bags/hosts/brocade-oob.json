@@ -1,0 +1,7 @@
+{
+  "id": "brocade-oob",
+  "hostname": "brocade-oob",
+  "aliases": ["brocade-oob.sandy"],
+  "comment": "Brocade OOB Management - FCDAS",
+  "ip": "10.55.0.15"
+}

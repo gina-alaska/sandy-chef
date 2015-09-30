@@ -1,0 +1,7 @@
+{
+  "id": "pdu1",
+  "hostname": "pdu1",
+  "aliases": ["pdu1.sandy"],
+  "comment": "PDU 1 - FCDAS",
+  "ip": "10.55.0.21"
+}

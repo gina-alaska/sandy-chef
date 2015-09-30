@@ -1,0 +1,7 @@
+{
+  "id": "glc-m-01",
+  "hostname": "glc-m-01",
+  "aliases": ["glc-m-01.sandy"],
+  "comment": "Gilmore Management Node 01 N1",
+  "ip": "10.50.0.10"
+}

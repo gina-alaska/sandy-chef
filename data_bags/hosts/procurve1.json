@@ -1,0 +1,7 @@
+{
+  "id": "procurve1",
+  "hostname": "procurve1",
+  "aliases": ["procurve1.sandy"],
+  "comment": "Procurve 1 - FCDAS",
+  "ip": "10.55.0.16"
+}
