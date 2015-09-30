@@ -1,0 +1,7 @@
+{
+    "id": "centos-6-vm",
+    "arch": "x86_64",
+    "platform": "centos",
+    "version": "6.7",
+    "kickstart": "centos-6-vm.cfg"
+}
