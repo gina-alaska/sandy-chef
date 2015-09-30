@@ -1,0 +1,21 @@
+{
+  "id": "whfisher",
+  "uid": 30118483,
+  "gid": 30118483,
+  "shell": "/bin/bash",
+  "comment": "Will Fisher",
+  "email": "will@alaska.edu",
+  "ssh_keygen": false,
+  "password": "$1$etbd99g4$UGdMIsCRVNpne8kiZtoc01",
+  "groups": [
+    "gina",
+    "sysadmin"
+  ],
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7V3zVskoo6jdYHPnre/K242zHIwOdbc3X9Z1cDbth3oDmipF4P3SYHbpXQlDQOwgdlcHMaXf/6Upg2BwPAGwyd+xW/MdyQh/fIqfGaMVVBVq4ZMv3ugYl6orgGXYfFzz6NKbCKsXL9IRpcnnuLYmdXnfnRivWmIYgiSVPH8Qg0ZI/m7LKIvhBY0b7ZDzvcCz+jj+4jQfQrBiOUjwRp0otmkUPN3nIs7lB6f58Ps2UkjSXtYDYSWKCdaQZhKSgQgP42ReaC8nVZMWaFAY84rsg+EEp7ZtJEBduHaQksex9exW1zU8xLHDT+cDz89F5SOrmuXCSNdRKkoV2I3xlaR6cQ=="
+  ],
+  "action": [
+    "create",
+    "manage"
+  ]
+}

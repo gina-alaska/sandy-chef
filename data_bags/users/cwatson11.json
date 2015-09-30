@@ -1,0 +1,21 @@
+{
+  "id": "cwatson11",
+  "uid": 30936714,
+  "gid": 30936714,
+  "shell": "/bin/bash",
+  "comment": "Chris Watson",
+  "email": "cwatson11@alaska.edu",
+  "ssh_keygen": false,
+  "groups": [
+    "rcs", "sysadmin"
+  ],
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYqHW23IhIDNgE/bePbmzDCJc/fz9sojvgGByKu9eYHVCFBPYLLmgmO5OFdCwSDBD5gnbz8LIFiyQweZR++v+sk0Pi9aG43Xcy9sciqnW+snY0y3fghbKNvKqNpIv/HD1Q/U8EEgrm48b58ZmPcoOtedj7urNqXnuIOAXA5jOlmQ7EtpnuUttIiRPk/sJhSz0hwLn/9JAt91kN/JtIKtD2Ipxj69NPgtO60njk88yuonkpZsYJVuN3IwbitpNoHNgOMEWo210Xdc7n3HJKNJIawI3PrKLD08c9TfMNr0UrEMfaxIUV8dfKCX+8L1xlWIGD9hN42GrmFDQ9lacR22Q1",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDalvOhO8FOvu+JXeeMuzEwuVKkkaOg/vDInB8k+36ufy4RH7Cu1Du7QlfPlydYLbgJHXSaFpKyalg9sc31Xz2ZtJGAsZuik2hbfa73ZT5TTDBQ5iri2ZfY379lpH055/LRoqQq+vhm9NIPqQiComaadBnleW8oi8PM6DtNg4KkpfKdFWFw9GujP41gXR7o62p05vR//s/AUdvv5jhkLl8FyhbhOsR1w3g6+3OLw3B1+ABABJBXwTEMpk3V/BUugIe4868HXfWtGT4GTV+1r9PLVjKipvLdOn1mlvSmJro1p3px0MtYnoB/GaYLpd9UorhyUZtgSXGMIoGqGJGBPAaB",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDSvxXI52izTVbonaGdpYFTeSHqtur5q12KI2Vd/PDbjWSvdM6cW5FxOwXfuR3r753nwCY1aDZ/kxhalaieOq1x+23fun9qQPxZIglS+Fc+JbT8HmzSyzJ2e9XzI4aGRzj4cXglnbY9/PvlminhAxX28Unag4swgjpMyNMA7SSD7G5I2XFpS48KXCqd7KH3XZTh/ipmD5e3i4fuMF0BO2TqDFndvnwFgsCmfbWjIL7j7iR06wSFJF9Ywr7hPpgWXHMcGXdbM+gk9H/Xqf5ncsWcPWGP2srJtBMANdNMCYqPLRJzrANrjva95Q5blUZ/Omhi/YRNI6Zvt8UElJXsJQ=="
+  ],
+  "action": [
+    "create",
+    "manage"
+  ]
+}

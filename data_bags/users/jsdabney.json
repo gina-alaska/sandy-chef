@@ -1,0 +1,15 @@
+{
+  "id": "jsdabney",
+  "uid": 30479377,
+  "gid": 30479377,
+  "shell": "/bin/bash",
+  "comment": "Jeremiah Dabney",
+  "email": "jsdabney@alaska.edu",
+  "groups": [ "rcs", "sysadmin" ],
+  "ssh_keygen": false,
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/XyW8UgMYEx5ilmYaROdsqMF3EaiSOZOl+EmgNpjF1FxZ5PD8LgiqAQPsUx0hrodFFrlPeV3MmIIfqHEkGp+JFJzwrViaRkelo2BzMq0nDhBeQdtWuLdrnOym6dm6YYW0TDJhxXJDR/cZlE6hhc/0cmj7dAYHseIWlV51QAeJ3Y0rk53KbGlPxnbKKwGKTkUKwoPLiQXT+5sExP3Z749a2WCNUCzniPhVMxULez1TMUiGwe3GuKZYNiSj0LfwYLmM8Bdpe8LJiCGlNZlmoTP0GL6HFSaT9c+jVy+i2L1aFv1ZJ7UOlXfKvi0j7y3TOq+MVxb8/Gc9mIStK9m5L6t/",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDL89RtKJWaDeRFoAVW+3Lz64VXkjOcHWISpkYBewLm/qV9mE2UyDN70AM8vpFGBbY36FVjL9HsjtvolXZ9laOy25Wh4vsgklnSnvLjj/tyQzxdOrbeB0wPTPA6fKnD8ldMx4bU5NMuy6YgrCp4aXDsO4qlbglKE6URbtzYYPL6AzeJNySIpefNF06Ixk0ZFfX+HxwKdkDKL030VL2Mtj0n2ysf3MpZhhFOTwpmtjxQPY2AenSapZjkfBRZd5fwJq3eocYpMQZjMJ+TPkPJvX4rF5LYFV6pF1oiBMLxgFT/R162tpEBkgE0XEj7EoZyCwwdMGjfNUr6BW4jKXsP3jf7"
+  ],
+  "action": [ "create", "manage"]
+}
