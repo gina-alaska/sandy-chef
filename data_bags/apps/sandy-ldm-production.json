@@ -41,7 +41,6 @@
       "hostname": "204.227.127.41",
       "ok": ".*"
     }],
-    }],
     "requests": [{
       "feedset": "EXP",
       "host": "awipsdata2.ssec.wisc.edu",
