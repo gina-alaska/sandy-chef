@@ -36,6 +36,11 @@
       "feedset": "ANY",
       "hostname": "^198\\.122\\.193\\.69$",
       "ok": ".*"
+    },{
+      "feedset": "ANY",
+      "hostname": "204.227.127.41",
+      "ok": ".*"
+    }],
     }],
     "requests": [{
       "feedset": "EXP",
