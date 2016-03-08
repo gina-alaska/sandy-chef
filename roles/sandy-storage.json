@@ -29,6 +29,10 @@
               "rule": "-m state --state NEW -p tcp --dport 24008 -j ACCEPT",
               "ip_version": 4
             },
+            "24008-gluster-nfs": {
+              "rule": "-m state --state NEW -m multiport -p tcp --dports 38465:38467 -j ACCEPT",
+              "ip_version": 4
+            },
             "49152-glusterfs": {
               "rule": "-m state --state NEW -m multiport -p tcp --dports 49152:65535 -j ACCEPT",
               "ip_version": 4
