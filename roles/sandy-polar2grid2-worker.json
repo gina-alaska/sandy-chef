@@ -11,7 +11,7 @@
       }
     },
     "polar2grid": {
-      "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_IMAPP_POLAR2GRID_V2.0_BETA.tar.gz"
+      "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_IMAPP_POLAR2GRID_V2.0.tar.gz"
     }
   },
   "chef_type": "role",

@@ -3,6 +3,25 @@
   "description": "Sandy CSPP SDR Worker",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "cspp": {
+      "snpp-sdr": {
+        "components": {
+          "app": {
+            "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.1.tar.gz"
+          },
+          "static-terrain": {
+            "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.1_STATIC.tar.gz"
+          },
+          "cache": {
+            "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.1_CACHE.tar.gz"
+          },
+          "cirs-hb-patch": {
+            "url": "http://mirrors.gina.alaska.edu/SSEC/CSPP/CSPP_SDR_V2.1.1_PATCH.tar.gz",
+            "action": "install"
+          }
+        }
+      }
+    }
   },
   "override_attributes": {
     "sandy": {
