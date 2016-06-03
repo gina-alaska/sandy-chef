@@ -56,7 +56,18 @@
         "feedset": "ANY",
         "hostname": "204.227.127.41",
         "ok": ".*"
+      },
+      {
+        "feedset": "ANY",
+        "hostname": "^137.75.238.31$",
+        "ok": ".*"
+      },
+      {
+        "feedset": "ANY",
+        "hostname": "^ldmhub1.fsl.noaa.gov$",
+        "ok": ".*"
       }
+
     ],
     "requests": [
       {
