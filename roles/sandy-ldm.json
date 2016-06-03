@@ -6,6 +6,9 @@
 
   },
   "override_attributes": {
+    "omnibus_updater": {
+      "version": "12.4.1"
+    },
     "iptables-ng": {
       "rules": {
         "filter": {
